@@ -1,4 +1,5 @@
 const {Builder, By, Key} = require ("selenium-webdriver");
+var assert = require('assert');
 var should = require("chai").should();
 
 //describe the block
@@ -11,15 +12,18 @@ describe("jc", function(){
         await driver.findElement(By.id("username")).sendKeys("jesus.cervantes")
         await driver.findElement(By.id("password")).sendKeys("Kurax2023$$", Key.RETURN)
 
-         await driver.findElement(By.xpath("//*[contains(text(),'Reportes')]")).click()
-        
-        // text = await driver.findElement(By.xpath("")).getText().then(
-        //     function(value){
-        //         return value
-        //     }np
-        // );
-    })
+   
+        await driver.findElement(By.xpath("//span[@text='Reporte de apuestas']")).sendKeys("Reportes", Key.RETURN)
+
+        let text = await driver.findElement(By.xpath("//input[@placeholder='Busqueda...']")).getText().then(
+            function(value){
+                return value;
+         });
+         assert.strictEqual(text,"Busqueda...");
+    });
+
 })
+
  //launch 
     //assert
     // let 
