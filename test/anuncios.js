@@ -1,9 +1,8 @@
 const {Builder, By, Key} = require ("selenium-webdriver");
 const ltCapabilities = require("../capabilities.js");
-var assert = require('assert');
 const {Select} = require('selenium-webdriver')
-const {IWebElement} = require('selenium-webelement')
-const { capabilities } = require("../capabilities");
+const { capabilities } = require("../capabilities.js");
+var assert = require('assert');
 var should = require("chai").should();
 
 //usr
@@ -21,7 +20,7 @@ const gridUrl = "https://" + USERNAME + ":" + KEY + "@" +GRID_HOST;
 //     driver = new Builder().usingServer(gridUrl)
 // })
 //describe the block
-describe("jc", function(){
+describe("anuncios", function(){
     it("successfull", async function(){
         let driver = await new Builder().forBrowser("chrome").build()
 
@@ -34,36 +33,36 @@ describe("jc", function(){
         await driver.findElement(By.id("anuncios_texto")).sendKeys("Lorem Ipsum"); 
         
         //fechas
-        let fromDateBox = driver.findElement(By.id("anuncios_fecha_desde"));
-        await driver.executeScript('arguments[0].removeAttribute(\"readonly\")', fromDateBox);    
-        await fromDateBox.clear();
-        await fromDateBox.sendKeys("06-06-2022")
+        // let fromDateBox = driver.findElement(By.id("anuncios_fecha_desde"));
+        // await driver.executeScript('arguments[0].removeAttribute(\"readonly\")', fromDateBox);    
+        // await fromDateBox.clear();
+        // await fromDateBox.sendKeys("06-06-2022")
 
-        let ToDateBox = driver.findElement(By.id("anuncios_fecha_hasta"));
-        await driver.executeScript('arguments[0].removeAttribute(\"readonly\")', ToDateBox);    
-        await ToDateBox.clear();
-        await ToDateBox.sendKeys("06-06-2022")
+        // let ToDateBox = driver.findElement(By.id("anuncios_fecha_hasta"));
+        // await driver.executeScript('arguments[0].removeAttribute(\"readonly\")', ToDateBox);    
+        // await ToDateBox.clear();
+        // await ToDateBox.sendKeys("06-06-2022")
 
-        // await driver.findElement(By.id('anuncios_dia_4')).click()       
+        // // await driver.findElement(By.id('anuncios_dia_4')).click()       
 
-        //select element type
-        const selectElement = await driver.findElement(By.id('anuncios_tipo_archivo'))
-        const select = new Select(selectElement)
-        await select.selectByIndex(0)
+        // //select element type
+        // const selectElement = await driver.findElement(By.id('anuncios_tipo_archivo'))
+        // const select = new Select(selectElement)
+        // await select.selectByIndex(0)
 
-        IWebElement element = driver.findElement(By.id('btn_buscar_anuncio_imagen'))
-        await audioAdd.sendKeys("firm.png")
+        // //IWebElement element = await driver.findElement(By.id('btn_buscar_anuncio_imagen'))
+        // //await audioAdd.sendKeys("firm.png")
         
-        await driver.findElement(By.id('anuncios_tiempo_anuncio')).sendKeys('00')
+        // await driver.findElement(By.id('anuncios_tiempo_anuncio')).sendKeys('00')
       
-        //horass
-        await driver.findElement(By.id('anuncios_horario_desde')).sendKeys('0948')
-        await driver.findElement(By.id('anuncios_horario_hasta')).sendKeys('0949')
+        // //horass
+        // await driver.findElement(By.id('anuncios_horario_desde')).sendKeys('0948')
+        // await driver.findElement(By.id('anuncios_horario_hasta')).sendKeys('0949')
 
-        //select grupo anunicios
-        const selectElement2 = await driver.findElement(By.id('anuncios_grupo_select_filtro'))
-        const select2 = new Select(selectElement2)
-        await select2.selectByVisibleText('at-sistemas')
+        // //select grupo anunicios
+        // const selectElement2 = await driver.findElement(By.id('anuncios_grupo_select_filtro'))
+        // const select2 = new Select(selectElement2)
+        // await select2.selectByVisibleText('at-sistemas')
 
         await driver.findElement(By.xpath("//button[@type='submit']")).click();
 
