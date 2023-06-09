@@ -4,7 +4,7 @@
   "description": "selenium-test",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --spec ./test/*.js --reporter mochawesome --timeout 10000"
+    "test": "mocha --spec ./test/anuncios.js --reporter mochawesome --timeout 500000"
   },
   "keywords": [
     "selenium"

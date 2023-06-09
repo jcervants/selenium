@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 2,
-    "tests": 2,
-    "passes": 2,
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2023-06-08T21:32:51.626Z",
-    "end": "2023-06-08T21:33:00.536Z",
-    "duration": 8910,
-    "testsRegistered": 2,
-    "passPercent": 100,
+    "failures": 1,
+    "start": "2023-06-09T22:29:41.034Z",
+    "end": "2023-06-09T22:29:54.763Z",
+    "duration": 13729,
+    "testsRegistered": 1,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,35 +18,16 @@
   },
   "results": [
     {
-      "uuid": "6b3ba66a-e20b-4999-80eb-a9d242d1f0a6",
+      "uuid": "ea5b4633-7dde-4889-ae58-018965421184",
       "title": "",
-      "fullFile": "",
-      "file": "",
-      "beforeHooks": [
-        {
-          "title": "\"before each\" hook in \"{root}\"",
-          "fullTitle": "\"before each\" hook in \"{root}\"",
-          "timedOut": false,
-          "duration": 0,
-          "state": null,
-          "speed": null,
-          "pass": false,
-          "fail": false,
-          "pending": false,
-          "context": null,
-          "code": "driver = new Builder().usingServer(gridUrl)",
-          "err": {},
-          "uuid": "bda75c41-4aa7-4c8e-ab4b-74e0b796dcd7",
-          "parentUUID": "6b3ba66a-e20b-4999-80eb-a9d242d1f0a6",
-          "isHook": true,
-          "skipped": false
-        }
-      ],
+      "fullFile": "C:\\Users\\Jonathan C\\Documents\\selenium\\test\\anuncios.js",
+      "file": "\\test\\anuncios.js",
+      "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "fb7988d4-d284-42ca-9693-91e2c9e2e4d9",
+          "uuid": "858c4e7f-753a-4acb-a714-a59eb1b31311",
           "title": "anuncios",
           "fullFile": "C:\\Users\\Jonathan C\\Documents\\selenium\\test\\anuncios.js",
           "file": "\\test\\anuncios.js",
@@ -57,71 +38,36 @@
               "title": "successfull",
               "fullTitle": "anuncios successfull",
               "timedOut": false,
-              "duration": 4573,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 13714,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "let driver = await new Builder().forBrowser(\"chrome\").build()\n//navigate\nawait driver.get(\"https://gestion.apuestatotal.dev/\")\nawait driver.findElement(By.id(\"username\")).sendKeys(\"jesus.cervantes\")\nawait driver.findElement(By.id(\"password\")).sendKeys(\"Kurax2023$$\", Key.RETURN)\n       \nawait driver.get(\"https://gestion.apuestatotal.dev/?sec_id=anuncios&sub_sec_id=anuncios\")\nawait driver.findElement(By.id(\"anuncios_texto\")).sendKeys(\"Lorem Ipsum\"); \n\n//fechas\n// let fromDateBox = driver.findElement(By.id(\"anuncios_fecha_desde\"));\n// await driver.executeScript('arguments[0].removeAttribute(\\\"readonly\\\")', fromDateBox);    \n// await fromDateBox.clear();\n// await fromDateBox.sendKeys(\"06-06-2022\")\n// let ToDateBox = driver.findElement(By.id(\"anuncios_fecha_hasta\"));\n// await driver.executeScript('arguments[0].removeAttribute(\\\"readonly\\\")', ToDateBox);    \n// await ToDateBox.clear();\n// await ToDateBox.sendKeys(\"06-06-2022\")\n// // await driver.findElement(By.id('anuncios_dia_4')).click()       \n// //select element type\n// const selectElement = await driver.findElement(By.id('anuncios_tipo_archivo'))\n// const select = new Select(selectElement)\n// await select.selectByIndex(0)\n// //IWebElement element = await driver.findElement(By.id('btn_buscar_anuncio_imagen'))\n// //await audioAdd.sendKeys(\"firm.png\")\n\n// await driver.findElement(By.id('anuncios_tiempo_anuncio')).sendKeys('00')\n      \n// //horass\n// await driver.findElement(By.id('anuncios_horario_desde')).sendKeys('0948')\n// await driver.findElement(By.id('anuncios_horario_hasta')).sendKeys('0949')\n// //select grupo anunicios\n// const selectElement2 = await driver.findElement(By.id('anuncios_grupo_select_filtro'))\n// const select2 = new Select(selectElement2)\n// await select2.selectByVisibleText('at-sistemas')\nawait driver.findElement(By.xpath(\"//button[@type='submit']\")).click();\n\n\n//*[@id=\"anuncios_formulario_anuncios\"]/div[19]/button\n// await driver.executeScript('arguments[0].setAttribute(\"value\", 22\")', fromDateBox);\n// await fromDateBox.sendKeys('01-01-1999'); //Enter date in required format\n// await driver.findElement(By.xpath(\"//a[@class='sidebar-collapse']\")).click()\n// await driver.findElement(By.xpath(\"//*[@title='mkt']//descendant::ul/li[2]/a\")).click()\n// await driver.findElement(By.xpath(\"[//li[title='mkt']//descendant::ul/li[3]\")).click();\n// await driver.findElement(By.xpath(\"//text()[contains(.,'Anuncios')]/ancestor::li[self::li].click()\")).click()\n//await driver.findElement(By.xpath(\"//li[@contains='Auditoria']\")).click()\n// await driver.findElement(By.xpath(\"//span[@text('Reporte de apuestas')]\")).sendKeys(\"Reportes\", Key.RETURN)\n// let text = await driver.findElement(By.xpath(\"//input[@placeholder='Busqueda...']\")).getText().then(\n//     function(value){\n//         return value;\n//  });\n//  assert.strictEqual(text,\"Busqueda...\");",
-              "err": {},
-              "uuid": "1e9f0de3-59d8-4348-8d78-1c9fac7b9855",
-              "parentUUID": "fb7988d4-d284-42ca-9693-91e2c9e2e4d9",
+              "code": "let driver = await new Builder().forBrowser(\"chrome\").build()\n//navigate\nawait driver.get(\"http://192.168.12.160:8096\")\nawait driver.findElement(By.id(\"username\")).sendKeys(\"jesus.cervantes\")\nawait driver.findElement(By.id(\"password\")).sendKeys(\"Kurax2023$$\", Key.RETURN)\n       \nawait driver.get(\"http://192.168.12.160:8096/?sec_id=anuncios&sub_sec_id=anuncios\")\nawait driver.findElement(By.id(\"anuncios_dia_6\")).click() \nawait driver.findElement(By.id(\"anuncios_texto\")).sendKeys(\"Lorem Ipsum @@**I=VR\"); \n\n//fechas\nlet fromDateBox = driver.findElement(By.id(\"anuncios_fecha_desde\"));\nawait driver.executeScript('arguments[0].removeAttribute(\\\"readonly\\\")', fromDateBox);    \nawait fromDateBox.clear();\nawait fromDateBox.sendKeys(\"09-06-2022\")\nlet ToDateBox = driver.findElement(By.id(\"anuncios_fecha_hasta\"));\nawait driver.executeScript('arguments[0].removeAttribute(\\\"readonly\\\")', ToDateBox);    \nawait ToDateBox.clear();\nawait ToDateBox.sendKeys(\"09-06-2022\");\n    \n     \n//select element type\nconst selectElement = await driver.findElement(By.id('anuncios_tipo_archivo'))\nconst select = new Select(selectElement)\nawait select.selectByIndex(1)\n\n       // await driver.findElement(By.id('anuncios_check_image_multiple')).click()\n       // await driver.findElement(By.id('btn_buscar_anuncio_imagen')).click()\n//IWebElement elemen await driver.findElement(By.id('btn_buscar_anuncio_imagen'))t =\n//await audioAdd.sendKeys(\"firm.png\")\n\nawait driver.findElement(By.id('anuncios_tiempo_anuncio')).sendKeys('02')\n//horass\nawait driver.findElement(By.id('anuncios_horario_desde')).sendKeys('1525')\nawait driver.findElement(By.id('anuncios_horario_hasta')).sendKeys('1527')\n//select grupo anunicios\nconst selectElement2 = await driver.findElement(By.id('anuncios_grupo_select_filtro'))\nconst select2 = new Select(selectElement2)\nawait select2.selectByVisibleText('at-sistemas')\nconst mainWindowHandle = await driver.getWindowHandle(); // Obtener el identificador de la ventana principal\n \n// Realizar una acción que provoque la aparición del modal o ventana emergente\n       await driver.findElement(By.xpath(\"//button[@type='submit']\")).click();\n\n// Esperar a que aparezca el modal o ventana emergente\nawait driver.wait(async function () { \n  const allWindowHandles = await driver.getAllWindowHandles(); // Obtener todos los identificadores de ventana\n  return allWindowHandles.length > 1; // Comprobar si se abrió una nueva ventana\n}, 5000, 'El modal o ventana emergente se ha abierto');\n\nconst allWindowHandles = await driver.getAllWindowHandles(); // Obtener todos los identificadores de ventana\n\n// Cambiar al identificador de ventana del modal o ventana emergente\nconst modalWindowHandle = allWindowHandles.find(handle => handle !== mainWindowHandle);\nawait driver.switchTo().window(modalWindowHandle);\n\n// Realizar las comprobaciones necesarias en el modal o ventana emergente\nconst modalTitleElement = await driver.findElement(By.css('.modal-title'));\nconst modalTitle = await modalTitleElement.getText();\n// assert.equal(modalTitle, 'Título del Modal'); // Verificar el título del modal\n\n// Cerrar el modal o ventana emergente y volver a la ventana principal\n// await driver.close();\nawait driver.switchTo().window(mainWindowHandle);",
+              "err": {
+                "message": "TimeoutError: El modal o ventana emergente se ha abierto\nWait timed out after 5032ms",
+                "estack": "TimeoutError: El modal o ventana emergente se ha abierto\nWait timed out after 5032ms\n    at C:\\Users\\Jonathan C\\Documents\\selenium\\node_modules\\selenium-webdriver\\lib\\webdriver.js:929:17\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                "diff": null
+              },
+              "uuid": "38724c15-6f84-4d14-9819-a27a971113da",
+              "parentUUID": "858c4e7f-753a-4acb-a714-a59eb1b31311",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "1e9f0de3-59d8-4348-8d78-1c9fac7b9855"
+          "passes": [],
+          "failures": [
+            "38724c15-6f84-4d14-9819-a27a971113da"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4573,
+          "duration": 13714,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 10000
-        },
-        {
-          "uuid": "84ffcbbe-24b1-4026-a3f1-e5e3f6579fde",
-          "title": "préstamos-bóveda",
-          "fullFile": "C:\\Users\\Jonathan C\\Documents\\selenium\\test\\prestamos-boveda.js",
-          "file": "\\test\\prestamos-boveda.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "successfull",
-              "fullTitle": "préstamos-bóveda successfull",
-              "timedOut": false,
-              "duration": 4329,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "let driver = await new Builder().forBrowser(\"chrome\").build()\n//navigate con supervisor\nawait driver.get(\"https://gestion.apuestatotal.dev/\")\nawait driver.findElement(By.id(\"username\")).sendKeys(\"supervisoruno.test\")\nawait driver.findElement(By.id(\"password\")).sendKeys(\"123456\", Key.RETURN)\nawait driver.get(\"https://gestion.apuestatotal.dev/?sec_id=prestamo&sub_sec_id=boveda\")\n\n// //navigate con jefecomercialuno.test\n// await driver.get(\"https://gestion.apuestatotal.dev/\")\n// await driver.findElement(By.id(\"username\")).sendKeys(\"jefecomercialuno.test\")\n// await driver.findElement(By.id(\"password\")).sendKeys(\"123456\", Key.RETURN)\n// await driver.get(\"https://gestion.apuestatotal.dev/?sec_id=prestamo&sub_sec_id=tesoreria\")\n\n// //navigate con tesoreria\n// await driver.get(\"https://gestion.apuestatotal.dev/\")\n// await driver.findElement(By.id(\"username\")).sendKeys(\"tesoreria.mepa\")\n// await driver.findElement(By.id(\"password\")).sendKeys(\"123456\", Key.RETURN)\n// await driver.get(\"https://gestion.apuestatotal.dev/?sec_id=prestamo&sub_sec_id=tesoreria\")\n//btn guardar   \nawait driver.switchTo().activeElement();",
-              "err": {},
-              "uuid": "827f6c1f-a0ae-4310-96c8-58c140970121",
-              "parentUUID": "84ffcbbe-24b1-4026-a3f1-e5e3f6579fde",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "827f6c1f-a0ae-4310-96c8-58c140970121"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 4329,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 10000
+          "_timeout": 500000
         }
       ],
       "passes": [],
@@ -131,7 +77,7 @@
       "duration": 0,
       "root": true,
       "rootEmpty": true,
-      "_timeout": 10000
+      "_timeout": 500000
     }
   ],
   "meta": {
