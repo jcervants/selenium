@@ -8,15 +8,12 @@ var should = require("chai").should();
 
 //usr
 const USERNAME = ltCapabilities.capabilities.username;
-
 //pas-key
 const KEY = ltCapabilities.capabilities.accessKey;
-
 //host
 const GRID_HOST = "hub.lambdatest.com/wd/hub";
 
 const gridUrl = "https://" + USERNAME + ":" + KEY + "@" +GRID_HOST;
-
 // beforeEach(function(){
 //     driver = new Builder().usingServer(gridUrl)
 // })
@@ -26,42 +23,41 @@ describe("anuncios", function(){
     it("successfull", async function(){
         let driver = await new Builder().forBrowser("chrome").build()
         //navigate
-        await driver.get("http://192.168.12.160:8096")
+        await driver.get("https://gestion.apuestatotal.com/")
         await driver.findElement(By.id("username")).sendKeys("jesus.cervantes")
         await driver.findElement(By.id("password")).sendKeys("Kurax2023$$", Key.RETURN)
        
-        await driver.get("http://192.168.12.160:8096/?sec_id=anuncios&sub_sec_id=anuncios")
-        await driver.findElement(By.id("anuncios_dia_6")).click() 
+        await driver.get("https://gestion.apuestatotal.com/?sec_id=anuncios&sub_sec_id=anuncios")
+        await driver.findElement(By.id("anuncios_dia_4")).click() 
         await driver.findElement(By.id("anuncios_texto")).sendKeys("Lorem Ipsum @@**I=VR"); 
         
         //fechas
         let fromDateBox = driver.findElement(By.id("anuncios_fecha_desde"));
         await driver.executeScript('arguments[0].removeAttribute(\"readonly\")', fromDateBox);    
         await fromDateBox.clear();
-        await fromDateBox.sendKeys("09-06-2022")
+        await fromDateBox.sendKeys("26-06-2023")
 
+        //hasta
         let ToDateBox = driver.findElement(By.id("anuncios_fecha_hasta"));
         await driver.executeScript('arguments[0].removeAttribute(\"readonly\")', ToDateBox);    
         await ToDateBox.clear();
-        await ToDateBox.sendKeys("09-06-2022");
+        await ToDateBox.sendKeys("26-06-2023");
 
-            
-     
         //select element type
         const selectElement = await driver.findElement(By.id('anuncios_tipo_archivo'))
         const select = new Select(selectElement)
-        await select.selectByIndex(1)
+        await select.selectByIndex(0)
 
-       // await driver.findElement(By.id('anuncios_check_image_multiple')).click()
-       // await driver.findElement(By.id('btn_buscar_anuncio_imagen')).click()
+        await driver.findElement(By.id('anuncios_check_image_multiple')).click()
+        await driver.findElement(By.id('btn_buscar_anuncio_imagen')).click()
 
         //IWebElement elemen await driver.findElement(By.id('btn_buscar_anuncio_imagen'))t =
         //await audioAdd.sendKeys("firm.png")
         
-        await driver.findElement(By.id('anuncios_tiempo_anuncio')).sendKeys('02')
+        await driver.findElement(By.id('anuncios_tiempo_anuncio')).sendKeys('01')
         //horass
-        await driver.findElement(By.id('anuncios_horario_desde')).sendKeys('1525')
-        await driver.findElement(By.id('anuncios_horario_hasta')).sendKeys('1527')
+        await driver.findElement(By.id('anuncios_horario_desde')).sendKeys('0935')
+        await driver.findElement(By.id('anuncios_horario_hasta')).sendKeys('0937')
 
         //select grupo anunicios
         const selectElement2 = await driver.findElement(By.id('anuncios_grupo_select_filtro'))
@@ -71,7 +67,7 @@ describe("anuncios", function(){
         const mainWindowHandle = await driver.getWindowHandle(); // Obtener el identificador de la ventana principal
          
         // Realizar una acción que provoque la aparición del modal o ventana emergente
-       await driver.findElement(By.xpath("//button[@type='submit']")).click();
+      // await driver.findElement(By.xpath("//button[@type='submit']")).click();
         
         // Esperar a que aparezca el modal o ventana emergente
         await driver.wait(async function () { 
@@ -94,12 +90,8 @@ describe("anuncios", function(){
         // await driver.close();
         await driver.switchTo().window(mainWindowHandle);
       });
-          
-
-
-
-        // await driver.executeScript('arguments[0].setAttribute("value", 22")', fromDateBox);
-        // await fromDateBox.sendKeys('01-01-1999'); //Enter date in required format
+});
+   
 
         // await driver.findElement(By.xpath("//a[@class='sidebar-collapse']")).click()
         // await driver.findElement(By.xpath("//*[@title='mkt']//descendant::ul/li[2]/a")).click()
@@ -115,7 +107,7 @@ describe("anuncios", function(){
         //         return value;
         //  });
         //  assert.strictEqual(text,"Busqueda...");
-    });
+ 
 
  //launch 
     //assert

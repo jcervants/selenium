@@ -1,4 +1,4 @@
-exports.capabilities = {
+var capabilities = {
 	"browserName": "Chrome",
 	"browserVersion": "114.0",
 	"LT:Options": {
@@ -10,3 +10,4 @@ exports.capabilities = {
 		"plugin": "node_js-mocha"
 	}
 };
+exports.capabilities = capabilities;
